@@ -1,0 +1,559 @@
+.desktop,
+.desktop * {
+  box-sizing: border-box;
+}
+.desktop {
+  background: var(--back-gray, #f8f9fe);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+.navbar {
+  background: #343a40;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+  padding: 0 20px;
+}
+.ucv-1 {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.navbar2 {
+  background: #343a40;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  height: 50px;
+  position: relative;
+}
+.logo {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.c-ucv {
+  color: var(--gray-100, #f8f9fa);
+  text-align: left;
+  font-family: var(
+    --semi-bold-h5-heading-font-family,
+    "Inter-SemiBold",
+    sans-serif
+  );
+  font-size: var(--semi-bold-h5-heading-font-size, 20px);
+  font-weight: var(--semi-bold-h5-heading-font-weight, 600);
+  position: relative;
+}
+.navbar-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+.menu {
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.nav-link {
+  color: var(--gray-100, #f8f9fa);
+  text-align: left;
+  font-family: var(--body-base-text-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--body-base-text-font-size, 16px);
+  line-height: var(--body-base-text-line-height, 28px);
+  font-weight: var(--body-base-text-font-weight, 400);
+  position: relative;
+}
+.estadisticas {
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.nav-link2 {
+  color: var(--gray-400, #ced4da);
+  text-align: left;
+  font-family: var(--body-base-text-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--body-base-text-font-size, 16px);
+  line-height: var(--body-base-text-line-height, 28px);
+  font-weight: var(--body-base-text-font-weight, 400);
+  position: relative;
+}
+.espacio {
+  display: none;
+}
+.admin {
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.registro {
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.nav-link3 {
+  color: var(--gray-500, #adb5bd);
+  text-align: left;
+  font-family: var(--body-base-text-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--body-base-text-font-size, 16px);
+  line-height: var(--body-base-text-line-height, 28px);
+  font-weight: var(--body-base-text-font-weight, 400);
+  position: relative;
+}
+.frame-9 {
+  background: #ffffff;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+  overflow-x: auto;
+}
+.lunes-17 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  width: 161px;
+}
+.martes-18 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  width: 161px;
+}
+.mi-rcoles-19 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  width: 161px;
+}
+.jueves-20 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  width: 161px;
+}
+.viernes-21 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  width: 161px;
+}
+.frame-1 {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+.menu2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.desayuno-200-bandejas {
+  color: #000000;
+  text-align: left;
+  position: relative;
+  align-self: stretch;
+}
+.desayuno-200-bandejas-span {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span2 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 22px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span3 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.prote-na-acompa-ante-extra-bebida {
+  color: var(--heading-title-color, #152536);
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  height: 110px;
+}
+.almuerzo-1000-bandejas {
+  color: #000000;
+  text-align: left;
+  position: relative;
+  align-self: stretch;
+}
+.almuerzo-1000-bandejas-span {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span2 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.prote-na-acompa-ante-extra-bebida2 {
+  color: #152536;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  height: 110px;
+}
+.cena-200-bandejas {
+  color: #000000;
+  text-align: left;
+  position: relative;
+  align-self: stretch;
+}
+.cena-200-bandejas-span {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span2 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.prote-na-acompa-ante-extra-bebida3 {
+  color: #152536;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.desayuno-200-bandejas-span4 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span5 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span3 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span4 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span3 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span4 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span6 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span7 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span5 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span6 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span5 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span6 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span8 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span9 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span7 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span8 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span7 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span8 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span10 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.desayuno-200-bandejas-span11 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span9 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.almuerzo-1000-bandejas-span10 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span9 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.cena-200-bandejas-span10 {
+  color: #000000;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar2 {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .navbar-left {
+    gap: 4px;
+  }
+
+  .navbar-nav {
+    gap: 4px;
+  }
+
+  .menu, .estadisticas, .admin, .registro {
+    padding: 6px 8px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar2 {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .navbar-left {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .menu2 {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .menu2 {
+    width: 100%;
+  }
+}
