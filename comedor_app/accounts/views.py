@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect # type: ignore
-from django.contrib.auth import login, authenticate # type: ignore
+from django.contrib.auth import login, authenticate, logout # type: ignore
 from django.contrib.auth.decorators import login_required # type: ignore
 from .forms import UserRegistrationStep1Form, UserRegistrationStep2Form, CustomLoginForm
+from .models import CustomUser
 
 def register_step1(request):
     if request.method == 'POST':
@@ -54,7 +55,20 @@ def user_login(request):
             user = authenticate(request, username=id_number, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('users')
     else:
         form = CustomLoginForm()
     return render(request, 'accounts/login.html', {'form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
+
+@login_required
+def users(request):
+    users = CustomUser.objects.all()
+    context = {
+        'users': users,
+        'active_tab': 'users'  # For highlighting the active sidebar item
+    }
+    return render(request, 'accounts/users.html', context)
