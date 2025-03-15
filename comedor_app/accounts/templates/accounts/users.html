@@ -3,6 +3,12 @@
 {% block dashboard_content %}
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Usuarios</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a href="{% url 'add_user' %}" class="btn btn-sm btn-outline-secondary">
+            <span data-feather="plus"></span>
+            Agregar Usuario
+        </a>
+    </div>
 </div>
 
 <div class="table-responsive">
@@ -13,7 +19,7 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Dependencia</th>
-                <th>Tipo</th>
+                <th>Categoría</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +29,7 @@
                 <td>{{ user.get_full_name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.faculty }}</td>
-                <td>{% if user.is_employee %}Employee{% else %}User{% endif %}</td>
+                <td>{{ user.user_category.name }}</td>
             </tr>
             {% empty %}
             <tr>

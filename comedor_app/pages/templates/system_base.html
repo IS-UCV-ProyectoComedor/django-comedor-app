@@ -11,10 +11,10 @@
             </a>
             <ul class="list-unstyled ps-0">
                 <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#menu-collapse" aria-expanded="false">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#ingredients-collapse" aria-expanded="false">
                         <i class="bi bi-calendar3 me-2"></i>Ingredientes
                     </button>
-                    <div class="collapse" id="menu-collapse">
+                    <div class="collapse" id="ingredients-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly Plan</a></li>
                             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">History</a></li>
@@ -22,25 +22,25 @@
                     </div>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#menu-collapse" aria-expanded="false">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#menus-collapse" aria-expanded="{% if active_tab == 'menus' %}true{% else %}false{% endif %}">
                         <i class="bi bi-calendar3 me-2"></i>Menús
                     </button>
-                    <div class="collapse" id="menu-collapse">
+                    <div class="collapse {% if active_tab == 'menus' %}show{% endif %}" id="menus-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly Plan</a></li>
-                            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">History</a></li>
+                            <li><a href="{% url 'menus' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded {% if active_tab == 'menus' %}active{% endif %}">Ver todos</a></li>
+                            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Agregar</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="border-top my-3"></li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#users-collapse" aria-expanded="true">
-                        <i class="bi bi-people me-2"></i>Usarios
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#users-collapse" aria-expanded="{% if active_tab == 'users' %}true{% else %}false{% endif %}">
+                        <i class="bi bi-people me-2"></i>Usuarios
                     </button>
-                    <div class="collapse show" id="users-collapse">
+                    <div class="collapse {% if active_tab == 'users' %}show{% endif %}" id="users-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><a href="{% url 'users' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded {% if active_tab == 'users' %}active{% endif %}">Ver todos</a></li>
-                            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Agregar</a></li>
+                            <li><a href="{% url 'add_user' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Agregar</a></li>
                         </ul>
                     </div>
                 </li>

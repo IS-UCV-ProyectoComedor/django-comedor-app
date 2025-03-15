@@ -1,8 +1,160 @@
 {% extends 'base.html' %}
 
 {% block title %}Menú de la Semana - Comedor UCV{% endblock %}
+{% load menu_filters %}
 
 {% block content %}
-<h1> Welcome to Simple Site</h1>
-<p class="lead">This is the home page of our simple Django website.</p>
+<div class="container-fluid py-4">
+    <h1 class="mb-4 text-center">Menú de la Semana</h1>
+        
+    <!-- Daily Menus -->
+    <div class="row">
+        {% for day_info in week_days %}
+        <div class="col">
+            <div class="bg-light shadow-sm mb-4 py-3 text-center">
+                <h3 class="mb-0">{{ day_info.name }}</h3>
+                <small>{{ day_info.date|date:"d" }}</small>
+            </div>
+            <div class="menu-column">
+                <!-- Breakfast -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Desayuno</h5>
+                        <small>
+                            {% if day_info.menu %}
+                                {{ day_info.menu.breakfast_servings }} Bandejas
+                            {% else %}
+                                200 Bandejas
+                            {% endif %}
+                        </small>
+                    </div>
+                    <div class="card-body p-2">
+                        {% if day_info.menu and day_info.menu.breakfast_meals %}
+                            <div class="meal-item">
+                                {% for meal_id in day_info.menu.breakfast_meals %}
+                                    {% with meal=meals|get_item:meal_id %}
+                                        {% if meal.principal %}<div>{{ meal.principal }}</div>{% endif %}
+                                        {% if meal.extra1 %}<div>{{ meal.extra1 }}</div>{% endif %}
+                                        {% if meal.extra2 %}<div>{{ meal.extra2 }}</div>{% endif %}
+                                        {% if meal.extra3 %}<div>{{ meal.extra3 }}</div>{% endif %}
+                                    {% endwith %}
+                                {% endfor %}
+                            </div>
+                            <div class="meal-item">
+                                {% if day_info.menu.breakfast_drink %}
+                                    <div>{{ day_info.menu.breakfast_drink.principal }}</div>
+                                {% else %}
+                                    <div class="text-muted">No disponible</div>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div class="text-muted text-center py-2">Menú no disponible</div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- Lunch -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Almuerzo</h5>
+                        <small>
+                            {% if day_info.menu %}
+                                {{ day_info.menu.lunch_servings }} Bandejas
+                            {% else %}
+                                1000 Bandejas
+                            {% endif %}
+                        </small>
+                    </div>
+                    <div class="card-body p-2">
+                        {% if day_info.menu and day_info.menu.lunch_meals %}
+                            <div class="meal-item">
+                                {% for meal_id in day_info.menu.lunch_meals %}
+                                    {% with meal=meals|get_item:meal_id %}
+                                        {% if meal.principal %}<div>{{ meal.principal }}</div>{% endif %}
+                                        {% if meal.extra1 %}<div>{{ meal.extra1 }}</div>{% endif %}
+                                        {% if meal.extra2 %}<div>{{ meal.extra2 }}</div>{% endif %}
+                                        {% if meal.extra3 %}<div>{{ meal.extra3 }}</div>{% endif %}
+                                    {% endwith %}
+                                {% endfor %}
+                            </div>
+                            <div class="meal-item">
+                                {% if day_info.menu.lunch_drink %}
+                                    <div>{{ day_info.menu.lunch_drink.principal }}</div>
+                                {% else %}
+                                    <div class="text-muted">No disponible</div>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div class="text-muted text-center py-2">Menú no disponible</div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- Dinner -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Cena</h5>
+                        <small>
+                            {% if day_info.menu %}
+                                {{ day_info.menu.dinner_servings }} Bandejas
+                            {% else %}
+                                200 Bandejas
+                            {% endif %}
+                        </small>
+                    </div>
+                    <div class="card-body p-2">
+                        {% if day_info.menu and day_info.menu.dinner_meals %}
+                            <div class="meal-item">
+                                {% for meal_id in day_info.menu.dinner_meals %}
+                                    {% with meal=meals|get_item:meal_id %}
+                                    {% if meal.principal %}<div>{{ meal.principal }}</div>{% endif %}
+                                    {% if meal.extra1 %}<div>{{ meal.extra1 }}</div>{% endif %}
+                                    {% if meal.extra2 %}<div>{{ meal.extra2 }}</div>{% endif %}
+                                    {% if meal.extra3 %}<div>{{ meal.extra3 }}</div>{% endif %}
+                                    {% endwith %}
+                                {% endfor %}
+                            </div>
+                            <div class="meal-item">
+                                {% if day_info.menu.dinner_drink %}
+                                    <div>{{ day_info.menu.dinner_drink.principal }}</div>
+                                {% else %}
+                                    <div class="text-muted">No disponible</div>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div class="text-muted text-center py-2">Menú no disponible</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .meal-item {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+    }
+    .meal-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .card-header {
+        padding: 0.5rem 1rem;
+    }
+    .card-body {
+        padding: 0.75rem;
+    }
+    @media (max-width: 768px) {
+        .row > .col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 1.5rem;
+        }
+    }
+</style>
 {% endblock %} 

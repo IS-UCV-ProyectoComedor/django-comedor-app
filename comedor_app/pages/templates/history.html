@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load menu_filters %}
+
+{% block title %}Histórico{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Histórico de Menús</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Desayuno</th>
+                    <th>Bandejas</th>
+                    <th>Almuerzo</th>
+                    <th>Bandejas</th>
+                    <th>Cena</th>
+                    <th>Bandejas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for menu in daily_menus %}
+                <tr>
+                    <td>{{ menu.date|date:"d/m/Y" }}</td>
+                    <td>
+                        {% if menu.breakfast_meals %}
+                            {% for meal_id in menu.breakfast_meals %}
+                                {% with meal=meals|get_item:meal_id %}
+                                    <div>{{ meal.principal }}</div>
+                                    {% if meal.extra1 %}<div>{{ meal.extra1 }}</div>{% endif %}
+                                    {% if meal.extra2 %}<div>{{ meal.extra2 }}</div>{% endif %}
+                                    {% if meal.extra3 %}<div>{{ meal.extra3 }}</div>{% endif %}
+                                {% endwith %}
+                            {% endfor %}
+                            {% if menu.breakfast_drink %}
+                                <div class="text-muted">{{ menu.breakfast_drink.principal }}</div>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-muted">No disponible</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ menu.breakfast_servings }}</td>
+                    <td>
+                        {% if menu.lunch_meals %}
+                            {% for meal_id in menu.lunch_meals %}
+                                {% with meal=meals|get_item:meal_id %}
+                                    <div>{{ meal.principal }}</div>
+                                    {% if meal.extra1 %}<div>{{ meal.extra1 }}</div>{% endif %}
+                                    {% if meal.extra2 %}<div>{{ meal.extra2 }}</div>{% endif %}
+                                    {% if meal.extra3 %}<div>{{ meal.extra3 }}</div>{% endif %}
+                                {% endwith %}
+                            {% endfor %}
+                            {% if menu.lunch_drink %}
+                                <div class="text-muted">{{ menu.lunch_drink.principal }}</div>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-muted">No disponible</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ menu.lunch_servings }}</td>
+                    <td>
+                        {% if menu.dinner_meals %}
+                            {% for meal_id in menu.dinner_meals %}
+                                {% with meal=meals|get_item:meal_id %}
+                                    <div>{{ meal.principal }}</div>
+                                    {% if meal.extra1 %}<div>{{ meal.extra1 }}</div>{% endif %}
+                                    {% if meal.extra2 %}<div>{{ meal.extra2 }}</div>{% endif %}
+                                    {% if meal.extra3 %}<div>{{ meal.extra3 }}</div>{% endif %}
+                                {% endwith %}
+                            {% endfor %}
+                            {% if menu.dinner_drink %}
+                                <div class="text-muted">{{ menu.dinner_drink.principal }}</div>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-muted">No disponible</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ menu.dinner_servings }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center">No hay menús registrados</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .table td {
+        white-space: normal;
+        vertical-align: middle;
+    }
+    .table td > div {
+        margin-bottom: 0.25rem;
+    }
+    .table td > div:last-child {
+        margin-bottom: 0;
+    }
+</style>
+{% endblock %} 
